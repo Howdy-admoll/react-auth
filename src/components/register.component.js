@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { Component } from "react";
 
 export default class Home extends Component{
@@ -9,9 +10,19 @@ export default class Home extends Component{
             last_name: this.lastName,
             email: this.email,
             password: this.password,
-            confirm_password: this.confirmPassword,
+            password_confirm: this.confirmPassword
         };
-        console.log(data);
+        
+        
+        axios.post('http://localhost:8080/register', data).then(
+            res => {
+                console.log(res)
+            }
+        ).catch(
+            err =>{
+                console.log(err);
+            }
+        )
     };
     render(){
         return(
