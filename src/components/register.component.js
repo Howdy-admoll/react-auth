@@ -14,7 +14,7 @@ export default class Home extends Component{
         };
         
         
-        axios.post('http://localhost:8080/register', data).then(
+        axios.post('register', data).then(
             res => {
                 console.log(res)
             }

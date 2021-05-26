@@ -10,9 +10,9 @@ export default class Home extends Component{
             password: this.password
         };
 
-        axios.post('http://localhost:8000/login', data)
+        axios.post('login', data)
             .then(res => {
-                console.log(res)
+                localStorage.setItem('token', res.token);
             })
             .catch(err => {
                 console.log(err)
