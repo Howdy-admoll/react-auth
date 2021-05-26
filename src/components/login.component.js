@@ -5,7 +5,7 @@ export default class Home extends Component{
     render(){
         return(
             <form onSubmit={this.handleSubmit}>
-                <h3>Sign Up</h3>
+                <h3>Login</h3>
 
                 <div className="form-group" >
                     <label>First Name</label>
@@ -39,7 +39,7 @@ export default class Home extends Component{
 
                 <div className="form-group">
                     <label>.</label>
-                <button className="form-control btn btn-primary btn-block">Sign Up</button>
+                <button className="form-control btn btn-primary btn-block">Login</button>
                 </div>
 
                 
