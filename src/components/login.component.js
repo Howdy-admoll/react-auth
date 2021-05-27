@@ -12,7 +12,7 @@ export default class Home extends Component{
 
         axios.post('login', data)
             .then(res => {
-                localStorage.setItem('token', res.token);
+                localStorage.setItem('token', res.data.token);
             })
             .catch(err => {
                 console.log(err)
