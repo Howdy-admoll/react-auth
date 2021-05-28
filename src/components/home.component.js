@@ -4,13 +4,7 @@ export default class Home extends Component{
 
     state = {};
     componentDidMount(){
-        const config = {
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('token')
-            }
-        };
-
-        axios.get('user', config).then(
+        axios.get('user').then(
             res => {
                 this.setState({
                     user: res.data
