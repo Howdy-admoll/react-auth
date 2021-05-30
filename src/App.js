@@ -9,7 +9,10 @@ import Register from './components/register.component';
 
 
 export default class App extends Component {
-  componentDidMount(){
+
+  state = {};
+
+  componentDidMount = () => {
     axios.get('user').then(
         res => {
             this.setState({
@@ -20,7 +23,7 @@ export default class App extends Component {
             console.log(err)
         }
     )
-}
+};
   render() {
   return (
 
@@ -30,7 +33,7 @@ export default class App extends Component {
           <div className="auth-wrapper">
           <div className="auth-inner">
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={<Home user={this.state.user} />} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
             </Switch>
