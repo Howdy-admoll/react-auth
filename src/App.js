@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -8,7 +8,20 @@ import Login from './components/login.component';
 import Register from './components/register.component';
 
 
-function App() {
+export default class App extends Component {
+  componentDidMount(){
+    axios.get('user').then(
+        res => {
+            this.setState({
+                user: res.data
+            });
+        },
+        err => {
+            console.log(err)
+        }
+    )
+}
+  render() {
   return (
 
     <BrowserRouter>
@@ -26,6 +39,7 @@ function App() {
       </div>
     </BrowserRouter>
   );
+  }
 }
 
 export default App;
