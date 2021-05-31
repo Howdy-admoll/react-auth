@@ -5,9 +5,9 @@ export default class Home extends Component{
   
 
     render(){
-        if(this.state.user){
+        if(this.props.user){
             return(
-                <h2>Hi {this.state.user.first_name} {this.state.user.last_name}</h2>
+                <h2>Hi {this.props.user.first_name} {this.props.user.last_name}</h2>
             )
         }
         return(
