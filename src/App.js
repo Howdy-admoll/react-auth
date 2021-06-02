@@ -6,7 +6,7 @@ import Home from './components/home.component';
 import Nav from './components/nav.component';
 import Login from './components/login.component';
 import Register from './components/register.component';
-
+import axios from 'axios';
 
 export default class App extends Component {
 
@@ -33,7 +33,7 @@ export default class App extends Component {
           <div className="auth-wrapper">
           <div className="auth-inner">
             <Switch>
-              <Route exact path="/" component={<Home user={this.state.user} />} />
+              <Route exact path="/" component={() => <Home user={this.state.user} />} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
             </Switch>
@@ -44,5 +44,3 @@ export default class App extends Component {
   );
   }
 }
-
-export default App;
