@@ -27,7 +27,7 @@ export default class Nav extends Component{
           <div className="container">
             <Link className="navbar-brand" to={'/'}>Home</Link>
             <div className="collapse navbar-collapse">
-              
+              {buttons}
             </div>
           </div>
         </nav>
