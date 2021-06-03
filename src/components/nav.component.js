@@ -7,7 +7,13 @@ export default class Nav extends Component{
       let buttons;
 
       if(this.props.user){
-
+        buttons = (
+          <ul className="navbar-nav ml-auto">
+                  <li className="nav-item">
+                    <Link to={'/'} onClick={() => localStorage.clear()} className="nav-link">Logout</Link>
+                  </li>
+                </ul>
+    )
       }else{
         buttons = (
                     <ul className="navbar-nav ml-auto">
