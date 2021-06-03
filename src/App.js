@@ -29,7 +29,7 @@ export default class App extends Component {
 
     <BrowserRouter>
       <div className="App">
-        <Nav/>
+        <Nav user={this.state.user}/>
           <div className="auth-wrapper">
           <div className="auth-inner">
             <Switch>
